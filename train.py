@@ -35,7 +35,7 @@ TEST_IMAGES_PATH = TEST_PATH + 'images/'
 
 EXP_NAME = 'final_model'
 FOLDS_FILE_PATH = './' + EXP_NAME + '_fold_{}.npy'
-CUDA_ID = 1
+CUDA_ID = 0
 
 LR = 0.01
 TUNE_LR = 0.01
@@ -44,7 +44,7 @@ MOMENTUM = 0.9
 CYCLE_LENGTH = 64
 CYCLES = 4
 
-BATCH_SIZE = 16
+BATCH_SIZE = 1
 RANDOM_SEED = 42
 FOLDS = 5
 THRESHOLD = 0.5

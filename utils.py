@@ -59,6 +59,7 @@ def load_image(path, mask=False, to256=False):
 
 def load_train_data(train_images_path, train_masks_path, clean_small_masks=True, to256=False):
     file_paths = os.listdir(train_images_path)
+    print(len(os.listdir(train_images_path)), len(os.listdir(train_masks_path)))
 
     images = [load_image(train_images_path + file_path, to256=to256) for file_path in file_paths]
     masks = [load_image(train_masks_path + file_path, mask=True, to256=to256) for file_path in file_paths]

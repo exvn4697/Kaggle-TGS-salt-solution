@@ -188,7 +188,7 @@ class SawSeenNet(nn.Module):
             self.dropout(F.interpolate(dec_1, scale_factor=4, mode='nearest'),
                          p=self.probability, training=self.training),
         ], dim=1)
-
+        
         oc = self.context(hyper_column)
         final = self.final(oc)
 
