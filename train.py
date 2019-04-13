@@ -1,3 +1,5 @@
+import argparse
+
 import torch
 import pandas as pd
 import torch.nn as nn
@@ -20,6 +22,12 @@ from utils import load_train_data, load_test_data, trim_masks
 from sklearn.model_selection import KFold
 from utils import make_if_not_exist
 from trainers import Trainer
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--batchsize', type=int, default=16)
+args = parser.parse_args()
+
 
 IMG_SIZE_ORIGIN = 101
 IMG_SIZE_TARGET = 12
@@ -44,7 +52,7 @@ MOMENTUM = 0.9
 CYCLE_LENGTH = 64
 CYCLES = 4
 
-BATCH_SIZE = 8
+BATCH_SIZE = args.batchsize
 RANDOM_SEED = 42
 FOLDS = 5
 THRESHOLD = 0.5
